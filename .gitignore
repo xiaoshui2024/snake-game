@@ -1,0 +1,50 @@
+# 操作系统与文件管理
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.log
+*.tmp
+*.swp
+.cache/
+
+# 依赖与构建输出（通用）
+dist/
+build/
+out/
+coverage/
+.nyc_output/
+
+# Node/JavaScript
+node_modules/
+npm-debug.log*
+yarn-error.log
+pnpm-debug.log
+.pnpm-store/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+*.egg-info/
+*.egg
+
+# IDE/编辑器
+.idea/
+.vscode/
+.history/
+.project
+.classpath
+.settings/
+
+# 其他常见临时文件
+*.bak
+*.orig
+*.rej
+*.patch
+debug/
