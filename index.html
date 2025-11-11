@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>贪吃蛇游戏</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>贪吃蛇游戏</h1>
+      <div class="hud">
+        <span>分数：<strong id="score">0</strong></span>
+        <span>最高分：<strong id="best">0</strong></span>
+        <span class="hint">方向键/WASD 移动，P 暂停，R 重开</span>
+      </div>
+
+      <div class="controls">
+        <label>速度：
+          <select id="speed">
+            <option value="160">慢</option>
+            <option value="120" selected>标准</option>
+            <option value="80">快</option>
+            <option value="50">很快</option>
+          </select>
+        </label>
+        <label>关卡：
+          <select id="level">
+            <option value="none" selected>无障碍</option>
+            <option value="fixed1">固定关卡 1</option>
+            <option value="random">随机障碍</option>
+          </select>
+        </label>
+        <label>
+          <input type="checkbox" id="wrap" checked /> 边界环绕
+        </label>
+        <div class="buttons">
+          <button id="btnStart">开始</button>
+          <button id="btnPause">暂停</button>
+          <button id="btnRestart">重开</button>
+        </div>
+      </div>
+      <canvas id="game" width="480" height="480"></canvas>
+      <div id="status" class="status"></div>
+
+      <!-- 开始界面与结算弹窗 -->
+      <div id="overlay" class="overlay hidden">
+        <div class="overlay__card">
+          <h2>开始游戏</h2>
+          <p>方向键/WASD 控制，P 暂停，R 重开。</p>
+          <button id="overlayStart" class="btn-primary">开始游戏</button>
+        </div>
+      </div>
+
+      <div id="modal" class="modal hidden">
+        <div class="modal__card">
+          <h2>游戏结束</h2>
+          <p>本局分数：<strong id="finalScore">0</strong></p>
+          <p>最高分：<strong id="finalBest">0</strong></p>
+          <h3>最佳分数（Top5）</h3>
+          <ol id="bestList" class="best-list"></ol>
+          <div class="modal__actions">
+            <button id="modalRestart" class="btn-primary">再来一局</button>
+            <button id="modalClose" class="btn">关闭</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="src/main.js"></script>
+  </body>
+  </html>
